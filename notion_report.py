@@ -31,20 +31,10 @@ def get_tasks():
 
     payload = {
         "filter": {
-            "or": [
-                {  #  Filter tasks that were updated in the last 7 days
-                    "property": "Last Modification",
-                    "date": {
-                        "on_or_after": last_week
-                    }
-                },
-                {  #  Fix: Use "status" type instead of "select"
-                    "property": "Status",
-                    "status": {
-                        "equals": "Completed"
-                    }
-                }
-            ]
+            "property": "Last Modification",
+            "date": {
+                "on_or_after": last_week
+            }
         }
     }
 
